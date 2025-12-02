@@ -840,13 +840,21 @@ void CPU::printProcessLog(std::string name)
 
 void CPU::printProcessStatus()
 {
-	// Variables
+	
 	size_t coresAvailable = 0;
 	size_t coresUsed = 0;
 
-	std::string output = "";
-	std::string running = "";
-	std::string terminated = "";
+	size_t lineLength = 60;
+	size_t columnLength = lineLength / 2;
+	std::ostringstream output;
+	std::ostringstream terminated;
+	std::ostringstream running;
+
+	output << std::setw(lineLength) << std::setfill('-') << "\n";
+	output << "|" << centerString("Detailed Memory Visualization", lineLength - 3) << "|\n";
+	output << std::setw(lineLength) << std::setfill('-') << '\n';
+
+	output << std::setfill(' ');
 
 	{
 		std::unique_lock<std::mutex> coreLock(coreMutex);
@@ -863,10 +871,21 @@ void CPU::printProcessStatus()
 		}
 	}
 
-	output += "\n\nCores Used: " + std::to_string(coresUsed);
-	output += "\nCores Available: " + std::to_string(coresAvailable);
-	output += "\n\nUtilization: " + std::to_string(getAverageUtilization());
+	std::string uString = ": " + std::to_string(coresUsed);
+	output << std::left << std::setw(columnLength) << "Cores Used"
+		<< std::left << std::setw(columnLength) << uString << '\n';
 
+	std::string aString = ": " + std::to_string(coresAvailable);
+	output << std::left << std::setw(columnLength) << "Cores Available"
+		<< std::left << std::setw(columnLength) << aString << '\n';
+
+	std::ostringstream utilString;
+	utilString << std::fixed << std::setprecision(2) << getAverageUtilization() << "%";
+	output << std::left << std::setw(columnLength) << "CPU Util"
+		<< std::left << std::setw(columnLength) << utilString.str() << '\n';
+
+	std::string tString;
+	std::string rString;
 	{
 		std::unique_lock<std::mutex> masterListLock(masterListMutex);
 		for (auto& processControlBlock : masterListPCB)
@@ -874,20 +893,26 @@ void CPU::printProcessStatus()
 			// Implement logic here
 			if (processControlBlock->getState() == PCB::PROCESS_STATE::TERMINATED)
 			{
-				terminated += processControlBlock->getName() + "\n";
+				//terminated << processControlBlock->getName() + "\n";
+				tString = "FINISHED";
+
+				terminated << std::left << std::setw(columnLength) << processControlBlock->getName()
+					<< std::left << std::setw(columnLength) << tString << '\n';
 			}
 			else
 			{
-				running += processControlBlock->getName() + "\n";
+				//running << processControlBlock->getName() + "\n";
+				rString = std::to_string(processControlBlock->getProgramCounter()) + " / " + std::to_string(processControlBlock->getProcess().getTextSection().getInstructionAll().size());
+
+				running << std::left << std::setw(columnLength) << processControlBlock->getName()
+					<< std::left << std::setw(columnLength) << rString << '\n';
 			}
 		}
 	}
 
-	std::cout << output + "\n\n";
-	std::cout << "Running Processes:\n";
-	std::cout << running;
-	std::cout << "\nTerminated Processes:\n";
-	std::cout << terminated;
+	std::cout << output.str();
+	std::cout << "\n\nRunning Processes:\n" << running.str();
+	std::cout << "\n\nTerminated Processes:\n" << terminated.str();
 }
 
 std::vector<std::string> CPU::split(std::string raw, char delimiter)
@@ -952,21 +977,20 @@ void CPU::stopGenerator()
 
 void CPU::writeReport()
 {
-	std::ofstream reportFile("Process-Report.txt");
-
-	if (!reportFile.is_open())
-	{
-		std::cerr << "Error: Target file was not opened.\n";
-		return;
-	}
-
-	// Variables
 	size_t coresAvailable = 0;
 	size_t coresUsed = 0;
 
-	std::string output = "";
-	std::string running = "";
-	std::string terminated = "";
+	size_t lineLength = 60;
+	size_t columnLength = lineLength / 2;
+	std::ostringstream output;
+	std::ostringstream terminated;
+	std::ostringstream running;
+
+	output << std::setw(lineLength) << std::setfill('-') << "\n";
+	output << "|" << centerString("Detailed Memory Visualization", lineLength - 3) << "|\n";
+	output << std::setw(lineLength) << std::setfill('-') << '\n';
+
+	output << std::setfill(' ');
 
 	{
 		std::unique_lock<std::mutex> coreLock(coreMutex);
@@ -983,10 +1007,21 @@ void CPU::writeReport()
 		}
 	}
 
-	output += "\n\nCores Used: " + std::to_string(coresUsed);
-	output += "\nCores Available: " + std::to_string(coresAvailable);
-	output += "\n\nUtilization: " + std::to_string(getAverageUtilization());
+	std::string uString = ": " + std::to_string(coresUsed);
+	output << std::left << std::setw(columnLength) << "Cores Used"
+		<< std::left << std::setw(columnLength) << uString << '\n';
 
+	std::string aString = ": " + std::to_string(coresAvailable);
+	output << std::left << std::setw(columnLength) << "Cores Available"
+		<< std::left << std::setw(columnLength) << aString << '\n';
+
+	std::ostringstream utilString;
+	utilString << std::fixed << std::setprecision(2) << getAverageUtilization() << "%";
+	output << std::left << std::setw(columnLength) << "CPU Util"
+		<< std::left << std::setw(columnLength) << utilString.str() << '\n';
+
+	std::string tString;
+	std::string rString;
 	{
 		std::unique_lock<std::mutex> masterListLock(masterListMutex);
 		for (auto& processControlBlock : masterListPCB)
@@ -994,22 +1029,32 @@ void CPU::writeReport()
 			// Implement logic here
 			if (processControlBlock->getState() == PCB::PROCESS_STATE::TERMINATED)
 			{
-				terminated += processControlBlock->getName() + "\n";
+				//terminated << processControlBlock->getName() + "\n";
+				tString = "FINISHED";
+
+				terminated << std::left << std::setw(columnLength) << processControlBlock->getName()
+					<< std::left << std::setw(columnLength) << tString << '\n';
 			}
 			else
 			{
-				running += processControlBlock->getName() + "\n";
+				//running << processControlBlock->getName() + "\n";
+				rString = std::to_string(processControlBlock->getProgramCounter()) + " / " + std::to_string(processControlBlock->getProcess().getTextSection().getInstructionAll().size());
+
+				running << std::left << std::setw(columnLength) << processControlBlock->getName()
+					<< std::left << std::setw(columnLength) << rString << '\n';
 			}
 		}
 	}
 
-	reportFile << output + "\n\n";
-	reportFile << "Running Processes:\n";
-	reportFile << running;
-	reportFile << "\nTerminated Processes:\n";
-	reportFile << terminated;
+	std::ofstream reportFile("process-report.txt");
 
-	reportFile.close();
+	if (reportFile.is_open())
+	{
+		reportFile << output.str();
+		reportFile << "\n\nRunning Processes:\n" << running.str();
+		reportFile << "\n\nTerminated Processes:\n" << terminated.str();
+		reportFile.close();
+	}
 }
 
 void CPU::visualizeMemoryDetailed()

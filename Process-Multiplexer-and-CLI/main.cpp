@@ -3,10 +3,6 @@
 #include <chrono>
 #include "CPU.hpp"
 
-std::string inst = "DECLARE(VAR, 1); DECLARE(VB, 0); WRITE(00000, 45); FOR([FOR([ADD(VAR, VAR, 1)], 4);], 4); PRINT(\"Value of VAR: \", VAR); READ(VB, 00000); PRINT(\"Value of VB: \", VB);";
-//std::string inst = "DECLARE(VAR, 0); WRITE(00000, 45); READ(VAR, 00000); PRINT(\"Value of VAR: \", VAR);";
-// FOR([FOR([ADD(VAR, VAR, 1)], 4);], 4);
-
 void clearConsole()
 {
 	std::cout << "\033\[2J\033[1;H";
@@ -97,11 +93,7 @@ static void _Screen_Commands(std::vector<std::string>& input, CPU& dev)
 
 					while (innerLoop)
 					{
-						clearConsole();
-						std::cout << "---------------------------------------------\n";
-						std::cout << "DEVLEOPER: Ampatin, Ian Kenneth J.\n\n";
-						std::cout << "Last Update: December 2, 2025\n";
-						std::cout << "---------------------------------------------\n";
+						
 						std::cout << processName + "\\: ";
 						std::getline(std::cin, command);
 
@@ -129,11 +121,7 @@ static void _Screen_Commands(std::vector<std::string>& input, CPU& dev)
 
 		while (innerLoop)
 		{
-			clearConsole();
-			std::cout << "---------------------------------------------\n";
-			std::cout << "DEVLEOPER: Ampatin, Ian Kenneth J.\n\n";
-			std::cout << "Last Update: December 2, 2025\n";
-			std::cout << "---------------------------------------------\n";
+			
 			std::cout << processName + "\\: ";
 			std::getline(std::cin, command);
 
@@ -157,11 +145,7 @@ static void systemInitialized()
 
 	while (isInitialized)
 	{
-		clearConsole();
-		std::cout << "---------------------------------------------\n";
-		std::cout << "DEVLEOPER: Ampatin, Ian Kenneth J.\n\n";
-		std::cout << "Last Update: December 2, 2025\n";
-		std::cout << "---------------------------------------------\n";
+		
 		std::cout << "\ninitialized\\: ";
 		std::getline(std::cin, lineCommand);
 
@@ -171,6 +155,7 @@ static void systemInitialized()
 			else if (lineCommand == "scheduler-stop")	MC.stopGenerator();
 			else if (lineCommand == "vmstat")			MC.visualizeMemoryDetailed();
 			else if (lineCommand == "process-smi")		MC.visualizeMemorySummary();
+			else if (lineCommand == "report-util")		MC.writeReport();
 			else if (lineCommand == "exit")				isInitialized = false;
 			else
 			{
@@ -213,8 +198,6 @@ int main()
 		}
 
 	}
-
-	//tester();
 
 	return 0;
 }
