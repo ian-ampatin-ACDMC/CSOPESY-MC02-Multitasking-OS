@@ -1,5 +1,2 @@
 ﻿  CPU.cpp
-  main.cpp
-C:\Users\Academic\source\repos\Process-Multiplexer-and-CLI\Process-Multiplexer-and-CLI\main.cpp(8,15): warning C4129: '[': unrecognized character escape sequence
-  Generating Code...
   Process-Multiplexer-and-CLI.vcxproj -> C:\Users\Academic\source\repos\Process-Multiplexer-and-CLI\x64\Debug\Process-Multiplexer-and-CLI.exe

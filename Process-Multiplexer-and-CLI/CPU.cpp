@@ -195,7 +195,7 @@ void CPU::generatorFunction()
 {
 	while (generatorRunning)
 	{
-		GlobalClock::getInstance().waitForTick(config.batchProcessFrequency);
+		GlobalClock::getInstance().waitForTick(config.batchProcessFrequency * 10);
 
 		std::vector<std::unique_ptr<Instruction>> instructionVector;
 
