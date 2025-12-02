@@ -1,0 +1,11 @@
+batch-process-frequency 1
+num-cores 4
+delay-per-execution 0
+maximum-instructions 2000
+minimum-instructions 1000
+quantum-cycles 4
+scheduling-alogrithm RR
+maximum-memory-per-process 8
+maximum-overall-memory 32768
+memory-per-frame 32
+minimum-memory-per-process 8

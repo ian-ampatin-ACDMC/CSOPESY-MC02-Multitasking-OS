@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\CPU">
+      <UniqueIdentifier>{629ec8e0-3493-4ecc-8ea5-dd87f5e1651d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CPU">
+      <UniqueIdentifier>{b8db5961-497d-4d28-a50f-1e362b38b96f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Instructions">
+      <UniqueIdentifier>{3d4459e3-06b9-4240-8633-cde9d7c17350}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Process Component">
+      <UniqueIdentifier>{8e2f43c0-1172-45f8-90b9-a96dd439bcdb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Instructions">
+      <UniqueIdentifier>{b519de32-2c79-4a68-a74b-d0a00cce7671}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Process Component">
+      <UniqueIdentifier>{7c40566d-2cfb-4175-b57a-c18727976ea7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Process">
+      <UniqueIdentifier>{cbc4a7f7-7eef-4ef0-b859-93534bd50561}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Process">
+      <UniqueIdentifier>{d40c6046-1370-4504-b968-5fc7d0320257}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Memory Manager">
+      <UniqueIdentifier>{0eeab25f-89ea-4b86-86ab-43f697632e45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Memory Manager">
+      <UniqueIdentifier>{6c004c32-c38c-4500-be62-d2a65b722d6c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPU.cpp">
+      <Filter>Source Files\CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="Instruction_SUBTRACT.cpp">
+      <Filter>Source Files\Instructions</Filter>
+    </ClCompile>
+    <ClCompile Include="Instruction_FOR.cpp">
+      <Filter>Source Files\Instructions</Filter>
+    </ClCompile>
+    <ClCompile Include="Instruction_DECLARE.cpp">
+      <Filter>Source Files\Instructions</Filter>
+    </ClCompile>
+    <ClCompile Include="Instruction_ADD.cpp">
+      <Filter>Source Files\Instructions</Filter>
+    </ClCompile>
+    <ClCompile Include="Instruction.cpp">
+      <Filter>Source Files\Instructions</Filter>
+    </ClCompile>
+    <ClCompile Include="Instruction_PRINT.cpp">
+      <Filter>Source Files\Instructions</Filter>
+    </ClCompile>
+    <ClCompile Include="TextSection.cpp">
+      <Filter>Source Files\Process Component</Filter>
+    </ClCompile>
+    <ClCompile Include="DataSection.cpp">
+      <Filter>Source Files\Process Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Stack.cpp">
+      <Filter>Source Files\Process Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Heap.cpp">
+      <Filter>Source Files\Process Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Core.cpp">
+      <Filter>Source Files\CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="Instruction_SLEEP.cpp">
+      <Filter>Source Files\Instructions</Filter>
+    </ClCompile>
+    <ClCompile Include="GlobalClock.cpp">
+      <Filter>Source Files\CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="Process.cpp">
+      <Filter>Source Files\Process</Filter>
+    </ClCompile>
+    <ClCompile Include="PCB.cpp">
+      <Filter>Source Files\Process</Filter>
+    </ClCompile>
+    <ClCompile Include="Instruction_READ.cpp">
+      <Filter>Source Files\Instructions</Filter>
+    </ClCompile>
+    <ClCompile Include="Instruction_WRITE.cpp">
+      <Filter>Source Files\Instructions</Filter>
+    </ClCompile>
+    <ClCompile Include="Frame.cpp">
+      <Filter>Source Files\Memory Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicalMemory.cpp">
+      <Filter>Source Files\Memory Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="LUM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MMU.cpp">
+      <Filter>Source Files\Memory Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="LogicalDataSection.cpp">
+      <Filter>Source Files\Process Component</Filter>
+    </ClCompile>
+    <ClCompile Include="GrowingBooleanVector.cpp">
+      <Filter>Source Files\CPU</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="data.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Instruction_SUBTRACT.hpp">
+      <Filter>Header Files\Instructions</Filter>
+    </ClInclude>
+    <ClInclude Include="Instruction_FOR.hpp">
+      <Filter>Header Files\Instructions</Filter>
+    </ClInclude>
+    <ClInclude Include="Instruction_DECLARE.hpp">
+      <Filter>Header Files\Instructions</Filter>
+    </ClInclude>
+    <ClInclude Include="Instruction_ADD.hpp">
+      <Filter>Header Files\Instructions</Filter>
+    </ClInclude>
+    <ClInclude Include="Instruction.hpp">
+      <Filter>Header Files\Instructions</Filter>
+    </ClInclude>
+    <ClInclude Include="Instruction_PRINT.hpp">
+      <Filter>Header Files\Instructions</Filter>
+    </ClInclude>
+    <ClInclude Include="TextSection.hpp">
+      <Filter>Header Files\Process Component</Filter>
+    </ClInclude>
+    <ClInclude Include="DataSection.hpp">
+      <Filter>Header Files\Process Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Stack.hpp">
+      <Filter>Header Files\Process Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Heap.hpp">
+      <Filter>Header Files\Process Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Core.hpp">
+      <Filter>Header Files\CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="CPU.hpp">
+      <Filter>Header Files\CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="Instruction_SLEEP.hpp">
+      <Filter>Header Files\Instructions</Filter>
+    </ClInclude>
+    <ClInclude Include="PCB.hpp">
+      <Filter>Header Files\Process</Filter>
+    </ClInclude>
+    <ClInclude Include="Process.hpp">
+      <Filter>Header Files\Process</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalClock.hpp">
+      <Filter>Header Files\CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="Instruction_WRITE.hpp">
+      <Filter>Header Files\Instructions</Filter>
+    </ClInclude>
+    <ClInclude Include="Instruction_READ.hpp">
+      <Filter>Header Files\Instructions</Filter>
+    </ClInclude>
+    <ClInclude Include="Frame.hpp">
+      <Filter>Header Files\Memory Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="MMU.hpp">
+      <Filter>Header Files\Memory Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicalMemory.hpp">
+      <Filter>Header Files\Memory Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="LUM.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LogicalDataSection.hpp">
+      <Filter>Header Files\Process Component</Filter>
+    </ClInclude>
+    <ClInclude Include="GrowingBooleanVector.hpp">
+      <Filter>Header Files\CPU</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="config.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Process-Report.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="backing-store.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
