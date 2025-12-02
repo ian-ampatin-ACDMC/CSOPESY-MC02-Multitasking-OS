@@ -202,7 +202,7 @@
     <Text Include="config.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="Process-Report.txt">
+    <Text Include="process-report.txt">
       <Filter>Resource Files</Filter>
     </Text>
     <Text Include="backing-store.txt">

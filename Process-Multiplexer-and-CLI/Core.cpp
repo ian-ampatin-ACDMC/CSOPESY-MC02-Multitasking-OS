@@ -735,9 +735,9 @@ bool Core::execute_SLEEP(Process& process, const std::unique_ptr<Instruction>& i
 					timingVector.erase(timingVector.begin());
 				}
 
-				timingVector.push_back(false);
+				timingVector.push_back(true);
 
-				booleanVector.appendElement(coreID, false);
+				booleanVector.appendElement(coreID, true);
 			}
 		}
 

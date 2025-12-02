@@ -145,7 +145,6 @@ static void systemInitialized()
 
 	while (isInitialized)
 	{
-		
 		std::cout << "\ninitialized\\: ";
 		std::getline(std::cin, lineCommand);
 
