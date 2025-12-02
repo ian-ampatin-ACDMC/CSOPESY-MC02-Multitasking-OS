@@ -36,7 +36,6 @@ private:
 
 	std::string dataPlaceholder;
 
-
 	std::list<unsigned long long> usageList;
 	
 	std::vector<std::optional<Frame>> frames;

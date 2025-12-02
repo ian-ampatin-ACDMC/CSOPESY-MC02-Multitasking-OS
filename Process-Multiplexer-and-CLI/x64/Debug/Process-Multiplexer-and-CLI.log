@@ -1,0 +1,36 @@
+﻿  Core.cpp
+C:\Users\Academic\source\repos\Process-Multiplexer-and-CLI\Process-Multiplexer-and-CLI\Core.cpp(34,38): warning C4101: 'e': unreferenced local variable
+C:\Users\Academic\source\repos\Process-Multiplexer-and-CLI\Process-Multiplexer-and-CLI\Core.cpp(38,34): warning C4101: 'e': unreferenced local variable
+  CPU.cpp
+  DataSection.cpp
+  Frame.cpp
+  GlobalClock.cpp
+  GrowingBooleanVector.cpp
+  Heap.cpp
+  Instruction.cpp
+  Instruction_ADD.cpp
+  Instruction_DECLARE.cpp
+  Instruction_FOR.cpp
+  Instruction_READ.cpp
+  Instruction_SLEEP.cpp
+  Instruction_WRITE.cpp
+  LogicalDataSection.cpp
+C:\Users\Academic\source\repos\Process-Multiplexer-and-CLI\Process-Multiplexer-and-CLI\LogicalDataSection.cpp(26,38): warning C4101: 'e': unreferenced local variable
+C:\Users\Academic\source\repos\Process-Multiplexer-and-CLI\Process-Multiplexer-and-CLI\LogicalDataSection.cpp(30,34): warning C4101: 'e': unreferenced local variable
+  LUM.cpp
+  MMU.cpp
+  PCB.cpp
+  PhysicalMemory.cpp
+C:\Users\Academic\source\repos\Process-Multiplexer-and-CLI\Process-Multiplexer-and-CLI\PhysicalMemory.cpp(162,38): warning C4101: 'e': unreferenced local variable
+C:\Users\Academic\source\repos\Process-Multiplexer-and-CLI\Process-Multiplexer-and-CLI\PhysicalMemory.cpp(166,34): warning C4101: 'e': unreferenced local variable
+  Process.cpp
+  Generating Code...
+  Compiling...
+  Stack.cpp
+  TextSection.cpp
+  Instruction_PRINT.cpp
+  Instruction_SUBTRACT.cpp
+  main.cpp
+C:\Users\Academic\source\repos\Process-Multiplexer-and-CLI\Process-Multiplexer-and-CLI\main.cpp(12,15): warning C4129: '[': unrecognized character escape sequence
+  Generating Code...
+  Process-Multiplexer-and-CLI.vcxproj -> C:\Users\Academic\source\repos\Process-Multiplexer-and-CLI\x64\Debug\Process-Multiplexer-and-CLI.exe
